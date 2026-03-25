@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { FormEvent } from 'react';
 import { SendHorizontal, User, Bot, AlertCircle, KeyRound, Loader2, Trash2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -40,7 +41,7 @@ export default function ChatInterface({ fileName, pdfText }: ChatInterfaceProps)
     scrollToBottom();
   }, [messages, isSettingKey]);
 
-  const handleSaveKey = (e: React.FormEvent) => {
+  const handleSaveKey = (e: FormEvent) => {
     e.preventDefault();
     if (tempKey.trim().length > 10) {
       localStorage.setItem('gemini_api_key', tempKey.trim());

@@ -1,6 +1,6 @@
-import React, { useState, DragEvent, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import type { DragEvent } from 'react';
 import { UploadCloud, FileText, MessageSquare, Loader2, CheckCircle2 } from 'lucide-react';
-import ChatInterface from './components/ChatInterface';
 
 function App() {
   const [isDragging, setIsDragging] = useState(false);
